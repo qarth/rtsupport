@@ -12,10 +12,11 @@ class MessageForm extends Component{
         let input;
         if(this.props.activeChannel.id !== undefined){
             input = (
-                <input ref='message'
-                       type="text"
-                       className='form-control'
-                       placeholder="Add Message..." />
+                <input
+                    ref='message'
+                    type="text"
+                    className='form-control'
+                    placeholder="Add Message..." />
                 )
         }
         return (
@@ -33,4 +34,4 @@ MessageForm.propTypes = {
     addMessage: React.PropTypes.func.isRequired
 }
 
-export default MessageForm
+export default MessageForm Message

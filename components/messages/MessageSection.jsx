@@ -23,3 +23,5 @@ MessageSection.propTypes = {
     activeChannel: React.PropTypes.object.isRequired
     addMessage: React.PropTypes.func.isRequired
 }
+
+export default MessageSection
