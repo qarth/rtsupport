@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class UserForm extends Component{
+class MessageForm extends Component{
     onsubmit(e){
         e.preventDefault()
         const node = this.refs.message;
@@ -12,10 +12,10 @@ class UserForm extends Component{
         let input;
         if(this.props.activeChannel.id !== undefined){
             input = (
-                ref='message'
+                <input ref='message'
                        type="text"
                        className='form-control'
-                       placeholder="Add Message..."
+                       placeholder="Add Message..." />
                 )
         }
         return (
@@ -32,3 +32,5 @@ MessageForm.propTypes = {
     activeChannel: React.PropTypes.object.isRequired
     addMessage: React.PropTypes.func.isRequired
 }
+
+export default MessageForm
