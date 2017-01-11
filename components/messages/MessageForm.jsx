@@ -30,8 +30,8 @@ class MessageForm extends Component{
 }
 
 MessageForm.propTypes = {
-    activeChannel: React.PropTypes.object.isRequired
+    activeChannel: React.PropTypes.object.isRequired,
     addMessage: React.PropTypes.func.isRequired
 }
 
-export default MessageForm Message
+export default MessageForm

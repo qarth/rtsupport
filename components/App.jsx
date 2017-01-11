@@ -1,13 +1,28 @@
 import React, {Component} from 'react';
 import ChannelSection from './channels/ChannelSection.jsx';
+import UserSection from './users/UserSection.jsx';
+import MessageSection from './messages/MessageSection.jsx'
 
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      channels: []
-    };
+      channels: [];
   }
+  }
+  open(){
+      this.setState({connected: true});
+  }
+  close(){
+      this.setState({connected:false});
+  }
+
+  newChannel(channel){
+      let {channels}= this.state;
+      channels.push(channel);
+      this.setState({channels});
+  }
+
   addChannel(name){
     let {channels} = this.state;
     channels.push({id: channels.length, name});
