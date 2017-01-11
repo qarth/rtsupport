@@ -18,6 +18,19 @@ class App extends Component{
     this.setState({activeChannel});
     // TODO: Get Channels Messages
   }
+  setUserName(name){
+    let {users} = this.state;
+    users.push({id: users.length, name});
+    this.setState({users});
+  }
+  addMessage(body){
+    let {message, users} = this.state;
+    let createdAt = new Date;
+    let author = users.length > 0 ? users[0].name :'anonymous';
+    messages.push({id: messages.length, body, createdAt, author});
+    this.setState({messages});
+
+  }
   render(){
     return (
       <div className='app'>
@@ -27,10 +40,17 @@ class App extends Component{
             addChannel={this.addChannel.bind(this)}
             setChannel={this.setChannel.bind(this)}
           />
+          <UserSection
+              {...this.state}
+              addMessage={this.addmessage.bind(this)}
+              />
         </div>
-      </div>
+        <MessageSection
+              {...this.state}
+              addMessage={this.addMessage.bind(this)}
+              />
+        </div>
 
-      
     )
   }
 }
